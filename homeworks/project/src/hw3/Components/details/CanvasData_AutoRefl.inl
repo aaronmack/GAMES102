@@ -26,6 +26,22 @@ struct Ubpa::USRefl::TypeInfo<CanvasData> :
         Field {TSTR("adding_line"), &Type::adding_line, AttrList {
             Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
         }},
+        Field {TSTR("drawUniformParameterization"), &Type::drawUniformParameterization, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return false; }},
+        }},
+        Field {TSTR("drawChordalParameterization"), &Type::drawChordalParameterization, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return false; }},
+        }},
+        Field {TSTR("drawCentripetalParameterization"), &Type::drawCentripetalParameterization, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return false; }},
+        }},
+        Field {TSTR("drawFoleyParameterization"), &Type::drawFoleyParameterization, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return false; }},
+        }},
+        Field {TSTR("uniformParameterization"), &Type::uniformParameterization},
+        Field {TSTR("chordalParameterization"), &Type::chordalParameterization},
+        Field {TSTR("centripetalParameterization"), &Type::centripetalParameterization},
+        Field {TSTR("foleyParameterization"), &Type::foleyParameterization},
     };
 };
 

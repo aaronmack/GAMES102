@@ -25,7 +25,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
             return 1;
 
         auto game = app.GetGameWorld();
-        game->systemMngr.RegisterAndActivate<CanvasSystem>();
+        auto [canvasSystemIdx] = game->systemMngr.RegisterAndCreate<CanvasSystem>();
+        game->systemMngr.Activate(canvasSystemIdx);
         game->entityMngr.cmptTraits.Register<CanvasData>();
         game->entityMngr.Create<CanvasData>();
 
