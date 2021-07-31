@@ -5,6 +5,35 @@
 #include <USRefl/USRefl.h>
 
 template<>
+struct Ubpa::USRefl::TypeInfo<Slope> :
+    TypeInfoBase<Slope>
+{
+#ifdef UBPA_USREFL_NOT_USE_NAMEOF
+    static constexpr char name[6] = "Slope";
+#endif
+    static constexpr AttrList attrs = {};
+    static constexpr FieldList fields = {
+        Field {TSTR("l"), &Type::l},
+        Field {TSTR("r"), &Type::r},
+    };
+};
+
+template<>
+struct Ubpa::USRefl::TypeInfo<Ratio> :
+    TypeInfoBase<Ratio>
+{
+#ifdef UBPA_USREFL_NOT_USE_NAMEOF
+    static constexpr char name[6] = "Ratio";
+#endif
+    static constexpr AttrList attrs = {};
+    static constexpr FieldList fields = {
+        Field {TSTR("l"), &Type::l},
+        Field {TSTR("r"), &Type::r},
+        Field {TSTR(UMeta::constructor), WrapConstructor<Type()>()},
+    };
+};
+
+template<>
 struct Ubpa::USRefl::TypeInfo<CanvasData> :
     TypeInfoBase<CanvasData>
 {
@@ -14,6 +43,11 @@ struct Ubpa::USRefl::TypeInfo<CanvasData> :
     static constexpr AttrList attrs = {};
     static constexpr FieldList fields = {
         Field {TSTR("points"), &Type::points},
+        Field {TSTR("ltangent"), &Type::ltangent},
+        Field {TSTR("rtangent"), &Type::rtangent},
+        Field {TSTR("tangent_ratio"), &Type::tangent_ratio},
+        Field {TSTR("xk"), &Type::xk},
+        Field {TSTR("yk"), &Type::yk},
         Field {TSTR("scrolling"), &Type::scrolling, AttrList {
             Attr {TSTR(UMeta::initializer), []()->Ubpa::valf2{ return { 0.f,0.f }; }},
         }},
@@ -26,6 +60,36 @@ struct Ubpa::USRefl::TypeInfo<CanvasData> :
         Field {TSTR("adding_line"), &Type::adding_line, AttrList {
             Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
         }},
+        Field {TSTR("param_type"), &Type::param_type, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->int{ return { 0 }; }},
+        }},
+        Field {TSTR("fitting_type"), &Type::fitting_type, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->int{ return { 0 }; }},
+        }},
+        Field {TSTR("enable_add_point"), &Type::enable_add_point, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { true }; }},
+        }},
+        Field {TSTR("adding_last_point"), &Type::adding_last_point, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
+        }},
+        Field {TSTR("edit_point"), &Type::edit_point, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->int{ return { 0 }; }},
+        }},
+        Field {TSTR("editing_index"), &Type::editing_index, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->int{ return -1; }},
+        }},
+        Field {TSTR("enable_move_point"), &Type::enable_move_point, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
+        }},
+        Field {TSTR("editing_tan_index"), &Type::editing_tan_index, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->int{ return 0; }},
+        }},
+        Field {TSTR("enable_move_tan"), &Type::enable_move_tan, AttrList {
+            Attr {TSTR(UMeta::initializer), []()->bool{ return { false }; }},
+        }},
+        Field {TSTR("pop_back"), &Type::pop_back},
+        Field {TSTR("clear"), &Type::clear},
+        Field {TSTR("push_back"), &Type::push_back},
     };
 };
 
