@@ -46,3 +46,8 @@ assets/models/
 assets/textures/
 
 imgui*.ini
+
+
+/homeworks/project/legacy_deps/
+.idea
+cmake-build-*
