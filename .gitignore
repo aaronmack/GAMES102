@@ -20,7 +20,7 @@ students/
 *.mp4
 *.pdf
 
-*.html
+#*.html
 
 *.rar
 *.zip
@@ -51,3 +51,18 @@ imgui*.ini
 /homeworks/project/legacy_deps/
 .idea
 cmake-build-*
+
+# exception
+!homeworks/project/src/hw10/Project/src/BasicCGAL12171.vcxproj.user
+!homeworks/project/src/hw10/Project/src/BasicCGAL12171.vcxproj.filters
+!homeworks/project/src/hw10/Project/src/BasicCGAL12171.vcxproj
+!homeworks/project/src/hw10/Project/x64/Debug
+!homeworks/project/src/hw10/Project/x64/Debug/assimp-vc142-mt.dll
+!homeworks/project/src/hw10/Project/x64/Debug/fade3D_x64_v141_Debug.dll
+!homeworks/project/src/hw10/Project/x64/Debug/voro++.dll
+!homeworks/project/src/hw10/Project/Crust.sln
+!homeworks/project/src/hw10/Project/lib
+!homeworks/project/src/hw10/Project/lib/assimp-vc142-mt.lib
+!homeworks/project/src/hw10/Project/lib/fade3D_x64_v141_Debug.lib
+!homeworks/project/src/hw10/Project/lib/glfw3.lib
+!homeworks/project/src/hw10/Project/include/assimp/config.h
