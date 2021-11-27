@@ -66,3 +66,4 @@ cmake-build-*
 !homeworks/project/src/hw10/Project/lib/fade3D_x64_v141_Debug.lib
 !homeworks/project/src/hw10/Project/lib/glfw3.lib
 !homeworks/project/src/hw10/Project/include/assimp/config.h
+!homeworks/project/src/hw8/include/CGAL/config.h
