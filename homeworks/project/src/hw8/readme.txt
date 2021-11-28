@@ -10,3 +10,8 @@ cmake -DCMAKE_TOOLCHAIN_FILE="C:\DEV_PROJECT\dev-repository\vcpkg\scripts\builds
 cmake --build . -- /M:4
 
 ```
+
+NOTICE:
+    FIXME
+        Can not run: CanvasSystem.cpp
+        Cause: CGAL uninclude
